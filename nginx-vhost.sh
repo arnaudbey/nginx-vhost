@@ -58,3 +58,10 @@ if [ $RELOAD = y ]; then
 	echo "Reload Nginx"
 	service nginx reload
 fi
+
+echo "ADD AN ENTRY IN /etc/hosts ? [y/n]:"
+read -rp "> " HOSTS
+if [ $HOSTS = y ]; then
+	echo "add entry hosts file"
+	echo "$VHOST $VHOST" >> /etc/hosts
+fi
